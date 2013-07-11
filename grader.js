@@ -27,7 +27,7 @@ var cheerio = require('cheerio');
 var rest = require('restler');
 var HTMLFILE_DEFAULT = "index.html";
 var CHECKSFILE_DEFAULT = "checks.json";
-var URLFILE_DEFAULT = "urldefault.html";
+var URLFILE_DEFAULT = "http://young-escarpment-3312.herokuapp.com/";
 
 var assertFileExists = function(infile) {
     var instr = infile.toString();
@@ -43,7 +43,7 @@ var assertPageExists = function(inpage) {
     var inpage = inpage.toString();
     var urlfile = 'localfile.html';
     var writeHtmlFile = buildfn(urlfile);
-    rest.get(inpage).on('complete',writeHtmlFile));
+    rest.get(inpage).on('complete',writeHtmlFile);
     return urlfile;
 }
 
